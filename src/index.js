@@ -1,30 +1,14 @@
 import Vue from 'vue'
-import AppDispatcher from './AppDispatcher'
-import ItemAction from './action'
-import ItemStore from './store'
+import itemsView from './view/items-view'
 
 Vue.config.debug = true
 
 // view
-new Vue({
+window.app = new Vue({
 	el: '#app',
-	data: {
-		items: ItemStore.getAll(),
-		newItem: { title: ''},
+	components: {
+		'items-view': itemsView
 	},
-	ready() {
-		//this.listChanged()
-		ItemStore.bind('change', this.listChanged)
-	},
-
-	methods: {
-		addItem() { ItemAction.add(this.$data.newItem) },
-		
-		listChanged() {
-			this.$data.$set('items', ItemStore.getAll())
-			this.$data.$set('newItem', { newItem: { title: ''}})
-		}
-	}
 })
 
 

@@ -1,4 +1,4 @@
-import AppDispatcher from './AppDispatcher'
+import AppDispatcher from '../AppDispatcher'
 
 const ItemActions = {
 
@@ -6,6 +6,13 @@ const ItemActions = {
 		AppDispatcher.dispatch({
 			eventName: 'new-item',
 			newItem: item
+		})
+	},
+
+	remove(item) {
+		AppDispatcher.dispatch({
+			eventName: 'remove-item',
+			item: item
 		})
 	}
 
