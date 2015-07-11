@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>webpack ES6 demo</title>
+</head>
+
+<body>
+
+  <!-- vue app -->
+  <div id="app">
+		<table>
+			<tr v-repeat="items">
+				<td> {{ title }} </td>
+			</tr>
+		</table>
+
+		<div>
+			<input type="text" v-model="newItem.title">
+			<button v-on="click: addItem">Add item</button>
+		</div>
+
+  </div>
+  <!-- vue app end -->
+	<script src="http://localhost:8080/webpack-dev-server.js"></script>
+  <script src="./dist/app.js"></script>
+
+</body>
+</html>
