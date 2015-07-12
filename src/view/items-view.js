@@ -3,9 +3,9 @@ import ItemAction from '../action/ItemActionCreators'
 
 const itemView = {
 	template: `<table>
-							 <tr v-repeat="items">
-								 <td> {{ title }} </td>
-								 <td><button v-on="click: removeItem(this)">X</button</td>
+							 <tr v-repeat="item: items" track-by="id">
+								 <td> {{ item.title }} </td>
+								 <td><button v-on="click: removeItem(item.id)">X</button</td>
 							 </tr>
 						</table>
 						<div>

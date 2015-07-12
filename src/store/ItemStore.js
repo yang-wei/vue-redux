@@ -1,7 +1,19 @@
 import MicroEvents from 'microevent-github'
 import AppDispatcher from '../AppDispatcher'
 
-const _items = [{title: 'Item #1'}, {title: 'Item #2'}, {title: 'Item #3'}]
+const _items = [{id: 1, title: 'Item #1'}, {id: 2, title: 'Item #2'}, {id: 3, title: 'Item #3'}]
+
+const _item = (n) => {
+	return {id: n, title: `Item #${n}`}
+}
+
+const _largeItems = (n = 0) => {
+	const _items = []
+	while(n--) {
+		_items.push(_item(n))
+	}
+	return _items
+} 
 
 class itemStore {
 	constructor(items = []) {
@@ -10,12 +22,14 @@ class itemStore {
 	}
 
 	addItem(item) {
-		this.items.push( item )
+		this.items.push(item)
 	}
 
-	removeItem(item) {
-		const index = this.items.indexOf(item);
-	  this.items.splice(index, 1);
+	removeItem(id) {
+		// we have to track it by using id because Vue data is not plain js object =(
+		this.items = this.items.filter(function(ele) {
+			return ele.id !== id
+		})
 	}
 
 	resetItem() {
@@ -26,8 +40,7 @@ class itemStore {
 		return this.items
 	}
 }
-
-const ItemStore = new itemStore(_items)
+const ItemStore = new itemStore(_largeItems(100))
 
 MicroEvents.mixin(ItemStore)
 
