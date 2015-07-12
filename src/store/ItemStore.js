@@ -1,26 +1,33 @@
 import MicroEvents from 'microevent-github'
 import AppDispatcher from '../AppDispatcher'
 
-const _items =  [{title: 'Item #1'}, {title: 'Item #2'}, {title: 'Item #3'}]
+const _items = [{title: 'Item #1'}, {title: 'Item #2'}, {title: 'Item #3'}]
 
-const ItemStore = {
+class itemStore {
+	constructor(items = []) {
+		this.items = items
+		this.newItem = { title: ''}
+	}
+
 	addItem(item) {
-		_items.push( item )
-	},
+		this.items.push( item )
+	}
 
 	removeItem(item) {
-		let index = _items.indexOf(item);
-	  _items.splice(index, 1);
-	},
+		const index = this.items.indexOf(item);
+	  this.items.splice(index, 1);
+	}
 
 	resetItem() {
 		return { title: ''}
-	},
+	}
 
 	getAll() {
-		return _items
+		return this.items
 	}
 }
+
+const ItemStore = new itemStore(_items)
 
 MicroEvents.mixin(ItemStore)
 

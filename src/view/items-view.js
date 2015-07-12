@@ -14,10 +14,7 @@ const itemView = {
 						</div>
 						`,
 	data() {
-		return {
-			items: [],
-			newItem: ''
-		}
+		return ItemStore
 	},
 	compiled() {
 		this.update()
