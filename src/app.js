@@ -7,11 +7,11 @@ import * as store from './store'
 Vue.config.debug = true
 
 new Vue({
-	el: '#app',
-	data: {
-		redux: createRedux(store)
-	},
-	components: {
-		'items-view': items
-	},
+  el: '#app',
+  data: {
+    redux: createRedux(store)
+  },
+  components: {
+    'items-view': items
+  },
 })
