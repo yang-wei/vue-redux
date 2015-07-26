@@ -3,7 +3,7 @@ It provides data-reactive components with a simple and flexible API.
 
 > __Redux__: Predictable state management for JavaScript apps
 
-# Vue + Flux :couple:
+# Vue + Redux :couple:
 An example of showing how to implement [~~Flux~~](http://facebook.github.io/flux/) [Redux](https://github.com/gaearon/redux) into a [Vue.js](http://vuejs.org/) app.
 
 ## Thoughts :thought_balloon:
@@ -37,7 +37,7 @@ npm run hot
  + babel for es6 
 
 ## What about the pure Flux?
-I start to experiment this with the pure Flux. You can still find it [here](https://github.com/yang-wei/vue-flux/releases/tag/v0.0.1)
+I start to experiment this with the pure Flux. You can still find it on [flux branch](https://github.com/yang-wei/vue-flux/tree/flux) or [here](https://github.com/yang-wei/vue-flux/releases/tag/v0.0.1)
 
 ## Vuex
 Recently, the creator of Vue.js created [Vuex](https://github.com/vuejs/vuex) which is a library to enable Vue.js adopt Flux-like architecture. 
