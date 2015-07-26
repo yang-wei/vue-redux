@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import itemsView from './component/items'
+import items from './component/items'
 
 import { createRedux } from 'redux'
 import * as store from './store'
@@ -12,6 +12,6 @@ new Vue({
 		redux: createRedux(store)
 	},
 	components: {
-		'items-view': itemsView
+		'items-view': items
 	},
 })
