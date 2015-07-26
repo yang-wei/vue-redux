@@ -1,6 +1,7 @@
 var path = require('path');
 
 module.exports = {
+  devtool: 'eval',
   entry: { 
     app: ['webpack/hot/dev-server', './src/index.js']
   },
@@ -9,7 +10,9 @@ module.exports = {
     publicPath: '/dist/',
     filename: 'app.js'
   },
-
+  resolve: {
+    extensions: ['', '.js']
+  },
   module: {
     loaders: [
       { 
