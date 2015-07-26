@@ -9,11 +9,14 @@
     "hot": "webpack-dev-server --hot",
     "build": "webpack"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yang-wei/vue-flux.git"
+  },
   "author": "yang-wei <yangweilim21@gmail.com> (http://yangweilim.com)",
   "license": "ISC",
   "dependencies": {
-    "flux": "^2.0.3",
-    "microevent-github": "^1.0.0",
+    "redux": "^0.12.0",
     "vue": "^0.12.7"
   },
   "devDependencies": {
