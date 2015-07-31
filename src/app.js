@@ -1,15 +1,15 @@
 import Vue from 'vue'
 import items from './component/items'
 
-import { createRedux } from 'redux'
-import * as store from './store'
+import { createStore } from 'redux'
+import { reducers } from './reducers'
 
-Vue.config.debug = true
+const store = createStore(reducers)
 
 new Vue({
   el: '#app',
   data: {
-    redux: createRedux(store)
+    store: store
   },
   components: {
     'items-view': items

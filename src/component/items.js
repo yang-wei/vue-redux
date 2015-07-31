@@ -2,7 +2,7 @@ import * as ItemAction from '../action/ItemAction'
 import { bindActionCreators } from 'redux'
 
 export default {
-  props: ['redux'],
+  props: ['store'],
   template: `<table>
                <tr v-repeat="item: items" track-by="id">
                  <td> {{ item.title }} </td>
@@ -15,19 +15,14 @@ export default {
   data() {
     return {
       title: '',
-      state: '',
+      items: '',
       actions: ''
-    }
-  },
-  computed: {
-    items: function() {
-      return this.state.items
     }
   },
   /* ------------- life cycle --------------- */
   created: function() {
     const handleChange = this.handleChange.bind(this)
-    this.unsubscribe = this.redux.subscribe(handleChange)
+    this.unsubscribe = this.store.subscribe(handleChange)
     handleChange()
   },
   destroyed: function() {
@@ -37,8 +32,8 @@ export default {
   /* ------------- methods ------------------- */
   methods: {
     handleChange() {
-      this.state = this.redux.getState();
-      this.actions = bindActionCreators(ItemAction, this.redux.dispatch);
+      this.items = this.store.getState();
+      this.actions = bindActionCreators(ItemAction, this.store.dispatch);
     },
     addItem() {
       if(this.title.trim()) {
