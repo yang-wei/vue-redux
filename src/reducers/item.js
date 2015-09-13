@@ -5,7 +5,7 @@ export default function items(state = initialState, action) {
   switch(action.type) {
     case 'add-item':
       return [...state, {
-        id: (state.length === 0) ? 0 : state.length + 1,
+        id: +new Date,      // unique id
         title: action.title
       }];
 
