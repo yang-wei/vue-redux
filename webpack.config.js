@@ -1,4 +1,4 @@
-var path = require('path');
+var vue = require('vue-loader');
 
 module.exports = {
   devtool: 'eval',
@@ -11,14 +11,19 @@ module.exports = {
     filename: 'app.js'
   },
   resolve: {
-    extensions: ['', '.js']
+    extensions: ['', '.js', '.vue']
   },
   module: {
     loaders: [
-      { 
-        test: path.join(__dirname, 'src'), 
-        loader: 'babel-loader' 
-      } 
+      {
+        test: /\.vue$/,
+        loader: vue.withLoaders({
+          js: 'babel?optional[]=runtime'
+        })
+      }, {
+        test: /\.js$/,
+        loader: 'babel-loader?blacklist[]=react'
+      }
     ] 
   }
 }
