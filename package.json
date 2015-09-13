@@ -17,6 +17,7 @@
   "license": "ISC",
   "dependencies": {
     "redux": "^3.0.0",
+    "redux-logger": "^1.0.6",
     "vue": "^0.12.7"
   },
   "devDependencies": {
