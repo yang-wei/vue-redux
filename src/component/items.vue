@@ -52,33 +52,22 @@
 
 <script>
 import * as ItemAction from '../action/ItemAction'
-import { bindActionCreators } from 'redux'
+import reduxMixinCreator from '../reduxMixinCreator'
+const reduxMixin = reduxMixinCreator(ItemAction)
 
 export default {
-  props: ['store'],
+  mixins: [reduxMixin],
   data() {
     return {
       title: '',
-      items: '',
-      actions: ''
     }
   },
-  /* ------------- life cycle --------------- */
-  created: function() {
-    const handleChange = this.handleChange.bind(this)
-    this.unsubscribe = this.store.subscribe(handleChange)
-    handleChange()
+  computed: {
+    items: function() {
+      return this.data.items;
+    }
   },
-  destroyed: function() {
-    this.unsubscribe()
-  },
-  /* ------------- life cycle ends --------------- */
-  /* ------------- methods ------------------- */
   methods: {
-    handleChange() {
-      this.items = this.store.getState();
-      this.actions = bindActionCreators(ItemAction, this.store.dispatch);
-    },
     addItem() {
       if(this.title.trim()) {
         this.actions.addItem(this.title)
