@@ -16,6 +16,9 @@ An example of showing how to implement [~~Flux~~](http://facebook.github.io/flux
  + Vue.js makes all data reactive. So our *store* and *actions* became Vue instance which inherit Vue native methods. Still hope to find a way to make it pure object.
 
 ## Run the app :computer:
+
+![](https://cldup.com/J7pXN7Y2ix.png)
+
 This app is just a pretty simple task list app. But it shows that Redux is working with Vue.js. Nothing fancy, to run it
 ```
 npm clone https://github.com/yang-wei/vue-flux.git 
@@ -28,7 +31,7 @@ npm run hot
 ```
 
 ## Todo :memo:
- + Some css maybe ?
+ + ~~Some css maybe ?~~
  + Extends this app to multiple pages
  + Unit testing
 
