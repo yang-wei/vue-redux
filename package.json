@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --compilers js:babel/register",
+    "test": "mocha --compilers js:babel/register --recursive",
     "test:watch": "npm run test -- --watch",
     "watch": "webpack --watch",
     "hot": "webpack-dev-server --hot",
