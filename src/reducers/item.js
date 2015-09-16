@@ -5,6 +5,7 @@ export default function items(state = initialState, action) {
   switch(action.type) {
     case 'add-item':
       return Object.assign({},
+        state,
         { items: [ ...state.items, {
           id: +new Date,      // unique id
           title: action.title
@@ -12,7 +13,8 @@ export default function items(state = initialState, action) {
       );
 
     case 'remove-item':
-      return Object.assign({}, 
+      return Object.assign({},
+        state,
         { items: state.items.filter(todo => todo.id !== action.id )}
       )
 
