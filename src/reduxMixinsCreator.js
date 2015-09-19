@@ -4,8 +4,6 @@ export default function(actionCreators) {
 
   return {
 
-    props: ['store'],
-
     data() {
       return {
         data: null,
