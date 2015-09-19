@@ -1,4 +1,4 @@
-import reduxMixinCreator from '../src/reduxMixinCreator';
+import reduxMixinsCreator from '../src/reduxMixinsCreator';
 import { createStore } from 'redux';
 import expect from 'expect';
 
@@ -6,7 +6,7 @@ const fakeReducers = () => {};
 const fakeActions = {};
 
 const store = createStore(fakeReducers);
-const reduxMixin = reduxMixinCreator(fakeActions);
+const reduxMixin = reduxMixinsCreator(fakeActions);
 
 describe('Redux mixin', () => {
 
