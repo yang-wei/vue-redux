@@ -51,12 +51,11 @@
 </style>
 
 <script>
-import * as ItemAction from '../action/ItemAction'
-import reduxMixinCreator from '../reduxMixinCreator'
-const reduxMixin = reduxMixinCreator(ItemAction)
+
+import { addItem, removeItem } from '../action/ItemAction.js'
 
 export default {
-  mixins: [reduxMixin],
+  props: ['data', 'actions'],
   data() {
     return {
       title: '',
@@ -65,7 +64,7 @@ export default {
   computed: {
     items: function() {
       return this.data.items;
-    }
+    },
   },
   methods: {
     addItem() {
