@@ -6,16 +6,16 @@ export default function(actionCreators) {
 
     data() {
       return {
-        data: null,
+        state: null,
         actions: null
       }
     },
 
     created() {
-      var updateView = this.updateView.bind(this)
-      this.unsubscribe = this.store.subscribe(updateView)
+      var updateState = this.updateState.bind(this)
+      this.unsubscribe = this.store.subscribe(updateState)
       this.actions = bindActionCreators(actionCreators, this.store.dispatch);
-      updateView();
+      updateState();
     },
 
     destroyed() {
@@ -23,8 +23,8 @@ export default function(actionCreators) {
     },
 
     methods: {
-      updateView() {
-        this.data = this.store.getState();
+      updateState() {
+        this.state = this.store.getState();
       },
     }
 
