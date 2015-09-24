@@ -55,7 +55,7 @@
 import { addItem, removeItem } from '../action/ItemAction.js'
 
 export default {
-  props: ['data', 'actions'],
+  props: ['state', 'actions'],
   data() {
     return {
       title: '',
@@ -63,7 +63,7 @@ export default {
   },
   computed: {
     items: function() {
-      return this.data.items;
+      return this.state.items;
     },
   },
   methods: {
