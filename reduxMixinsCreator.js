@@ -1,33 +1,35 @@
-import { bindActionCreators } from 'redux';
+var redux = require('redux');
+var bindActionCreators = redux.bindActionCreators;
 
-export default function(actionCreators) {
+function reduxMixinsCreator(actionCreators) {
 
   return {
 
-    data() {
+    data: function() {
       return {
         state: null,
         actions: null
       }
     },
 
-    created() {
+    created: function() {
       var updateState = this.updateState.bind(this)
       this.unsubscribe = this.store.subscribe(updateState)
       this.actions = bindActionCreators(actionCreators, this.store.dispatch);
       updateState();
     },
 
-    destroyed() {
+    destroyed: function() {
       this.unsubscribe();
     },
 
     methods: {
-      updateState() {
+      updateState: function() {
         this.state = this.store.getState();
       },
     }
-
   }
 
 }
+
+module.exports = reduxMixinsCreator;

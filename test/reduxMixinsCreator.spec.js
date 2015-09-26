@@ -1,48 +1,48 @@
-import reduxMixinsCreator from '../src/reduxMixinsCreator';
-import { createStore } from 'redux';
-import expect from 'expect';
-import sinon from 'sinon'
+var reduxMixinsCreator = require('../reduxMixinsCreator');
+var createStore = require('redux').createStore;
+var expect = require('expect');
+var sinon = require('sinon');
 
-const fakeReducers = () => {};
-const fakeActions = {};
+var fakeReducers = function() {};
+var fakeActions = {};
 
-const store = createStore(fakeReducers);
-const reduxMixins = reduxMixinsCreator(fakeActions);
+var store = createStore(fakeReducers);
+var reduxMixins = reduxMixinsCreator(fakeActions);
 
-describe('Redux mixin', () => {
+describe('Redux mixin', function() {
 
-  describe('Basic props', () => {
-    it('should have data property and created, destroyed method', () => {
+  describe('Basic props', function() {
+    it('should have data property and created, destroyed method', function() {
       expect(reduxMixins.data).toExist();
       expect(typeof reduxMixins.created).toEqual('function');
       expect(typeof reduxMixins.destroyed).toEqual('function');
     });
   });
 
-  describe('updateState', () => {
+  describe('updateState', function() {
 
-    before(() => {
+    before(function() {
       sinon.spy(reduxMixins.methods, 'updateState');
       reduxMixins.store = store;
       /** Hack to make test pass 
        *  Vue.js methods's method can be accessed via this.{method}
        *  but reduxMixinsCreator returned plain object.
        */
-      reduxMixins.updateState = () => {};
+      reduxMixins.updateState = function() {};
     });
 
-    it('should be called once when instance is created', () => {
+    it('should be called once when instance is created', function() {
       reduxMixins.created();
       expect(reduxMixins.methods.updateState.calledOnce);
     });
 
-    it('should be called when dispatch', () => {
+    it('should be called when dispatch', function() {
       reduxMixins.store.dispatch({type: 'TEST'});
       reduxMixins.store.dispatch({type: 'TEST AGAIN'});
       expect(reduxMixins.methods.updateState.calledTwice);
     });
 
-    after(() => {
+    after(function() {
       reduxMixins.methods.updateState.restore();
     });
   });

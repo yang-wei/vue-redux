@@ -1,7 +1,7 @@
 var vue = require('vue-loader');
 
 module.exports = {
-  devtool: 'eval',
+  devtool: 'cheap-eval-source-map',
   entry: { 
     app: ['webpack/hot/dev-server', './src/index.js']
   },

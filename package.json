@@ -1,40 +1,35 @@
 {
-  "name": "vue-flux",
-  "version": "1.0.0",
-  "description": "",
+  "name": "vue-redux",
+  "version": "0.0.1",
+  "description": "Vue.js mixins for Redux",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --compilers js:babel/register --recursive",
-    "test:watch": "npm run test -- --watch",
-    "watch": "webpack --watch",
-    "hot": "webpack-dev-server --hot",
-    "build": "webpack"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yang-wei/vue-flux.git"
+    "url": "git+https://github.com/yang-wei/vue-redux.git"
   },
+  "keywords": [
+    "redux",
+    "vue",
+    "flux",
+    "vue-flux",
+    "vue-redux"
+  ],
   "author": "yang-wei <yangweilim21@gmail.com> (http://yangweilim.com)",
-  "license": "ISC",
-  "dependencies": {
-    "redux": "^3.0.0",
-    "redux-logger": "^1.0.6",
-    "vue": "^0.12.7"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yang-wei/vue-redux/issues"
   },
+  "homepage": "https://github.com/yang-wei/vue-redux#readme",
   "devDependencies": {
-    "babel": "^5.8.23",
-    "babel-core": "^5.6.17",
-    "babel-loader": "^5.3.1",
-    "babel-runtime": "^5.8.24",
-    "css-loader": "^0.18.0",
-    "expect": "^1.10.0",
-    "html-loader": "^0.3.0",
+    "babel-core": "^5.8.25",
+    "babel-loader": "^5.3.2",
+    "expect": "^1.11.1",
     "mocha": "^2.3.3",
-    "node-libs-browser": "^0.5.2",
-    "sinon": "^1.17.0",
-    "style-loader": "^0.12.3",
-    "vue-loader": "^3.0.3",
-    "webpack": "^1.10.1",
-    "webpack-dev-server": "^1.10.1"
+    "redux": "^3.0.2",
+    "sinon": "^1.17.1",
+    "webpack": "^1.12.2"
   }
 }

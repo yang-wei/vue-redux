@@ -1,0 +1,39 @@
+{
+  "name": "vue-flux",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --compilers js:babel/register --recursive",
+    "test:watch": "npm run test -- --watch",
+    "watch": "webpack --watch",
+    "hot": "webpack-dev-server --hot",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yang-wei/vue-flux.git"
+  },
+  "author": "yang-wei <yangweilim21@gmail.com> (http://yangweilim.com)",
+  "license": "ISC",
+  "dependencies": {
+    "redux": "^3.0.0",
+    "redux-logger": "^1.0.6",
+    "vue": "^0.12.7"
+  },
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "babel-core": "^5.6.17",
+    "babel-loader": "^5.3.1",
+    "babel-runtime": "^5.8.24",
+    "css-loader": "^0.18.0",
+    "expect": "^1.10.0",
+    "html-loader": "^0.3.0",
+    "mocha": "^2.3.3",
+    "node-libs-browser": "^0.5.2",
+    "style-loader": "^0.12.3",
+    "vue-loader": "^3.0.3",
+    "webpack": "^1.10.1",
+    "webpack-dev-server": "^1.10.1"
+  }
+}
