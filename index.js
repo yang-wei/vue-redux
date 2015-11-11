@@ -1,1 +1,1 @@
-require('./reduxMixinsCreator');
+module.exports = require('./reduxMixinsCreator');
