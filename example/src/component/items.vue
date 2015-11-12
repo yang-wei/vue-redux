@@ -51,9 +51,6 @@
 </style>
 
 <script>
-
-import { addItem, removeItem } from '../action/ItemAction.js'
-
 export default {
   props: ['state', 'actions'],
   data() {
