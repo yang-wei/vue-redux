@@ -1,15 +1,15 @@
 <template>
   <div class="container">
     <h3>Todo List</h3>
-    <table class="table">
-       <tr v-repeat="item: items" track-by="id">
-         <td v-text="item.title"></td>
-         <td class="remove-button"><button v-on="click: removeItem(item)">X</button></td>
-       </tr>
-    </table>
+    <ul class="table">
+       <li v-for="item in items" track-by="id">
+         <span>{{ item.title }}</span>
+         <button v-on:click="removeItem(item)">X</button>
+       </li>
+    </ul>
     <div class="input">
       <input type="text" v-model="title" />
-      <button class="add" v-on="click: addItem">Add Item</button>
+      <button class="add" v-on:click="addItem">Add Item</button>
     </div>
   <div>
 </template>
@@ -24,7 +24,7 @@
     width: 250px;
   }
 
-  .table > tr {
+  .table > li {
     padding: 10px 15px;
   }
 
