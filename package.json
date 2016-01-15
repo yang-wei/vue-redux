@@ -1,6 +1,6 @@
 {
   "name": "vue-redux",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Vue.js mixins for Redux",
   "main": "index.js",
   "scripts": {
