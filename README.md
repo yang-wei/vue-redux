@@ -21,8 +21,8 @@ Please see the example in this repo.
 
 This app is just a pretty simple task list app. But it shows how to use vue-redux in a Vue.js application. Nothing fancy, to run it
 ```
-npm clone https://github.com/yang-wei/vue-redux.git 
-cd example
+git clone https://github.com/yang-wei/vue-redux.git 
+cd vue-redux/example
 npm install
 npm run build
 ```
