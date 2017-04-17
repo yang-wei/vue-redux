@@ -1,1 +1,2 @@
-module.exports = require('./reduxMixinsCreator');
+var reduxMixinsCreator = require('./reduxMixinsCreator');
+module.exports = { reduxMixinsCreator };
