@@ -1,7 +1,7 @@
 var redux = require('redux');
 var bindActionCreators = redux.bindActionCreators;
 
-function reduxMixinsCreator(actionCreators) {
+let ReduxMixinsCreator = function(actionCreators) {
 
   return {
 
@@ -32,4 +32,4 @@ function reduxMixinsCreator(actionCreators) {
 
 }
 
-module.exports = reduxMixinsCreator;
+exports.reduxMixinsCreator = ReduxMixinsCreator;
