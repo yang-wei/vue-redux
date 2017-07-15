@@ -1,4 +1,4 @@
-var {reduxMixinsCreator} = require('../reduxMixinsCreator');
+const reduxMixinsCreator = require('../reduxMixinsCreator');
 var createStore = require('redux').createStore;
 var expect = require('expect');
 var sinon = require('sinon');

@@ -32,4 +32,4 @@ let ReduxMixinsCreator = function(actionCreators) {
 
 }
 
-exports.reduxMixinsCreator = ReduxMixinsCreator;
+module.exports = ReduxMixinsCreator;

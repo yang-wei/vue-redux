@@ -10,7 +10,7 @@ const createStoreWithMiddleware = applyMiddleware(logger)(createStore)
 const store = createStoreWithMiddleware(reducers)
 
 import * as ItemAction from './action/ItemAction'
-import {reduxMixinsCreator} from '../../reduxMixinsCreator';
+import reduxMixinsCreator from '../../reduxMixinsCreator';
 const reduxMixins = reduxMixinsCreator(ItemAction)
 
 new Vue({
