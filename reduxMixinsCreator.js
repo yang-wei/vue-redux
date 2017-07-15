@@ -1,7 +1,7 @@
 var redux = require('redux');
 var bindActionCreators = redux.bindActionCreators;
 
-let ReduxMixinsCreator = function(actionCreators) {
+var ReduxMixinsCreator = function(actionCreators) {
 
   return {
 
